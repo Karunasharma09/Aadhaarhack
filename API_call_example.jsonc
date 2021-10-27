@@ -1,0 +1,16 @@
+// send to /api route via POST method
+// Leave "" empty string if value not given
+
+{
+    "C/o": "care of NAME",
+    "House no.": "house no / building no / apt",
+    "Street": "streen / road / lane",
+    "Landmark": "near ...",
+    "Area": "area / locality / sector",
+    "City": "village / town / city",
+    "PO": "post office",
+    "District": "district",
+    "Sub district": "sub district",
+    "State": "state",
+    "Pincode": 666999
+}
