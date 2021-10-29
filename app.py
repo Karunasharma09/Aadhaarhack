@@ -1,42 +1,16 @@
 from flask import Flask, request, render_template
-import json
-
-
-def functionToOptimizeAddress():
-    pass
+from address import Address
 
 app = Flask(__name__)
 
 @app.route('/api', methods=['POST'])
 def api():
-    origAdd = request.get_json()
-    co = origAdd['C/o']
-    house = origAdd['House no.']
-    street = origAdd['Street']
-    landmark = origAdd['Landmark']
-    area = origAdd['Area']
-    city = origAdd['City']
-    po = origAdd['PO']
-    district = origAdd['District']
-    sDistrict = origAdd['Sub district']
-    state = origAdd['State']
-    pin = origAdd['Pincode']
+    address = Address(request.get_json())
 
     # Function call to optimise values
+    address.optimize()
 
-    return json.dumps({
-        "C/o": co,
-        "House no.": house,
-        "Street": street,
-        "Landmark": landmark,
-        "Area": area,
-        "City": city,
-        "PO": po,
-        "District": district,
-        "Sub district": sDistrict,
-        "State": state,
-        "Pincode": pin
-    })
+    return address.toJSON()
     
 @app.route('/')
 def index():
@@ -46,5 +20,4 @@ def index():
         return "Put index.html in the templates directory of repo"
 
 if __name__ == '__main__':
-    app.debug = True
     app.run()
