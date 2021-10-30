@@ -10,4 +10,4 @@ Deployed [here](https://address-formatter.herokuapp.com)
 - [Karuna Sharma](https://github.com/Karunasharma09)
 - [Abhinav Kumar](https://github.com/AbhiSinha08)
 ## <br/>
-![API Example](./templates/example.png)
+![API Example](./static/example.png)
