@@ -74,12 +74,14 @@ class Address():
         self.co = self.co.title()
         self.street = self.street.capitalize()
         self.landmark = self.landmark.capitalize()
+        self.po = self.po.title()
         self.area = self.area.capitalize()
         self.city = self.city.title()
         self.sDistrict = self.sDistrict.title()
         self.district = self.district.title()
         self.state = self.state.title()
         self.name = self.name.title()
+        self.email = self.email.lower()
     
     def optimize(self):
         self.trim()
