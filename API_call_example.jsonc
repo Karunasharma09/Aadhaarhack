@@ -2,6 +2,8 @@
 // Leave "" empty string if value not given
 
 {
+    "UID": "123455",
+    "Name": "full name",
     "C/o": "care of NAME",
     "House no.": "house no / building no / apt",
     "Street": "streen / road / lane",
@@ -12,5 +14,7 @@
     "District": "district",
     "Sub district": "sub district",
     "State": "state",
-    "Pincode": 666999
+    "Pincode": "666999",
+    "Email": "huehuehue@gmail.com",
+    "Phone": "9876543210"
 }

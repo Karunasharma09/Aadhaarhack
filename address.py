@@ -2,6 +2,7 @@ import json
 
 class Address():
     def __init__(self, address):
+        self.uid = address['UID']
         self.co = address['C/o']
         self.house = address['House no.']
         self.street = address['Street']
@@ -13,21 +14,34 @@ class Address():
         self.sDistrict = address['Sub district']
         self.state = address['State']
         self.pin = address['Pincode']
+        self.name = address['Name']
+        self.email = address['Email']
+        self.phone = address['Phone']
     
     def toJSON(self):
-        return json.dumps({
-            "C/o": self.co,
-            "House no.": self.house,
-            "Street": self.street,
-            "Landmark": self.landmark,
-            "Area": self.area,
-            "City": self.city,
-            "PO": self.po,
-            "District": self.district,
-            "Sub district": self.sDistrict,
-            "State": self.state,
-            "Pincode": self.pin
-        })
+        add = {}
+        add['UID']= self.uid
+        add['Name']= self.name
+        if self.co:
+            add['C/o']= self.co
+        add['House no.']= self.house
+        if self.street:
+            add['Street']= self.street
+        add['Landmark']= self.landmark
+        if self.area:
+            add['Area']= self.area
+        if self.city:
+            add['City']= self.city
+        add['PO']= self.po
+        add['District']= self.district
+        if self.sDistrict:
+            add['Sub district']= self.sDistrict
+        if self.state:
+            add['State']= self.state
+        add['Pincode']= self.pin
+        add['Email']= self.email
+        add['Phone']= self.phone
+        return json.dumps(add)
 
     def trim(self):
         if "SELF" in self.co.upper():
@@ -65,6 +79,7 @@ class Address():
         self.sDistrict = self.sDistrict.title()
         self.district = self.district.title()
         self.state = self.state.title()
+        self.name = self.name.title()
     
     def optimize(self):
         self.trim()
