@@ -1,0 +1,10 @@
+.inactive-class {
+  display: none;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  flex-direction: row;
+}

@@ -511,6 +511,10 @@ a {
   text-decoration: inherit;
 }
 
+.active-class{
+  display: flex;
+}
+
 /**
  * Reset form element properties that are easy to forget to
  * style explicitly so you don't inadvertently introduce
