@@ -2,19 +2,19 @@
 // Leave "" empty string if value not given
 
 {
-    "UID": "123455",
+    "UID": "12 digit UID",
     "Name": "full name",
     "C/o": "care of NAME",
     "House no.": "house no / building no / apt",
     "Street": "streen / road / lane",
-    "Landmark": "near ...",
+    "Landmark": "landmark",
     "Area": "area / locality / sector",
     "City": "village / town / city",
     "PO": "post office",
     "District": "district",
     "Sub district": "sub district",
     "State": "state",
-    "Pincode": "666999",
-    "Email": "huehuehue@gmail.com",
-    "Phone": "9876543210"
+    "Pincode": "6 digit PIN",
+    "Email": "email id",
+    "Phone": "10 digit mobile number"
 }

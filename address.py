@@ -47,11 +47,27 @@ class Address():
         if "SELF" in self.co.upper():
             self.co = ""
 
+        if self.area.upper() in self.house.upper():
+            self.house = self.house.lower().replace(" "+self.area.lower(), "")
+        elif self.city.upper() in self.house.upper():
+            self.house = self.house.lower().replace(" "+self.city.lower(), "")
+
         if self.landmark:
             temp = self.landmark.upper().split()[0]
             if "NEAR" != temp and "OPP" != temp[:3]:
                 self.landmark = f"Near: {self.landmark}"
         
+        if self.city.upper() in self.po.upper():
+            self.po = self.po.lower().replace(" "+self.city.lower(), "")
+        elif self.district.upper() in self.po.upper():
+            self.po = self.po.lower().replace(" "+self.district.lower(), "")
+        elif self.sDistrict.upper() in self.po.upper():
+            self.po = self.po.lower().replace(" "+self.sDistrict.lower(), "")
+        elif self.state.upper() in self.po.upper():
+            self.po = self.po.lower().replace(" "+self.state.lower(), "")
+        if self.po[-1] == ",":
+            self.po = self.po[:-1]
+
         if self.street.upper() in self.area.upper():
             self.street = ""  
 
@@ -72,8 +88,9 @@ class Address():
 
     def capital(self):
         self.co = self.co.title()
+        self.house = self.house.upper()
         self.street = self.street.capitalize()
-        self.landmark = self.landmark.capitalize()
+        self.landmark = self.landmark.title()
         self.po = self.po.title()
         self.area = self.area.capitalize()
         self.city = self.city.title()
